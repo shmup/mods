@@ -385,6 +385,13 @@ func (m *Mods) startCompletionCmd(content string) tea.Cmd {
 			}
 		}
 
+		if cfg.SystemPrompt != "" {
+			m.messages = append(m.messages, openai.ChatCompletionMessage{
+				Role:    openai.ChatMessageRoleSystem,
+				Content: cfg.SystemPrompt,
+			})
+		}
+
 		m.messages = append(m.messages, openai.ChatCompletionMessage{
 			Role:    openai.ChatMessageRoleUser,
 			Content: content,

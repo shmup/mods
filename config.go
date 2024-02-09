@@ -146,6 +146,7 @@ type Config struct {
 	FormatAs          string
 	API               string
 	Models            map[string]Model
+	SystemPrompt      string
 	ShowHelp          bool
 	ResetSettings     bool
 	Prefix            string
